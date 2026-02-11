@@ -4,7 +4,7 @@ tasks:
   build:
     desc: keypress をビルド
     cmds:
-      - pwsh -Command "Enable-VSDev; if (!(Test-Path out)) { mkdir out }; cl /EHsc /W4 /O2 /utf-8 /Fo'out/' /Fe'out/' keypress.cpp /link /SUBSYSTEM:WINDOWS user32.lib"
+      - pwsh -Command "Enable-VSDev; if (!(Test-Path out)) { mkdir out }; cl /EHsc /W4 /O2 /GL /utf-8 /Fo'out/' /Fe'out/' keypress.cpp /link /LTCG /SUBSYSTEM:WINDOWS user32.lib"
 
   clean:
     desc: ビルド成果物を削除

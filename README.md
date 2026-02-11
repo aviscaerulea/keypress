@@ -94,17 +94,19 @@ keypress.exe "invalid_key" 2>&1 | Out-File error.log
 
 - [Visual Studio](https://visualstudio.microsoft.com/) 2026 以降（C++ デスクトップ開発ワークロード）
 - [PowerShell 7+](https://github.com/PowerShell/PowerShell)（pwsh）
-- [Task](https://taskfile.dev/)（オプション、`task build` を使う場合）
+- [Task](https://taskfile.dev/)
 
 ## ビルド方法
 
 ```powershell
-# Taskfile を使う場合
 task build
+```
 
-# PowerShell で直接実行する場合
+手動でビルドする場合:
+
+```powershell
 Enable-VSDev
-.\build.bat
+cl /EHsc /W4 /O2 /GL /utf-8 /Fo"out/" /Fe"out/" keypress.cpp /link /LTCG /SUBSYSTEM:WINDOWS user32.lib
 ```
 
 ## 動作の仕組み

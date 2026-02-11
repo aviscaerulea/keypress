@@ -26,24 +26,24 @@ Enable-VSDev
 ### ビルド
 
 ```cmd
-.\build.bat
+task build
 ```
 
-または手動でビルド:
+手動でビルドする場合:
 
 ```cmd
-cl /EHsc /W4 /O2 /utf-8 keypress.cpp /link /SUBSYSTEM:WINDOWS user32.lib
+cl /EHsc /W4 /O2 /GL /utf-8 /Fo"out/" /Fe"out/" keypress.cpp /link /LTCG /SUBSYSTEM:WINDOWS user32.lib
 ```
 
 ### 生成物
 
-- `keypress.exe`: 実行ファイル
-- `keypress.obj`: オブジェクトファイル
+- `out/keypress.exe`: 実行ファイル
+- `out/keypress.obj`: オブジェクトファイル
 
 ### クリーン
 
 ```cmd
-del keypress.exe keypress.obj
+task clean
 ```
 
 ## 実装上の注意点
