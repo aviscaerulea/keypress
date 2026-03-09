@@ -83,6 +83,15 @@ keypress.exe "invalid_key" 2>&1 | Out-File error.log
 | 0 | 成功 |
 | 1 | エラー（不正な引数、不明なキー名、入力不能文字など） |
 
+## インストール
+
+[Scoop](https://scoop.sh/) でインストールできる。
+
+```powershell
+scoop bucket add aviscaerulea https://github.com/aviscaerulea/scoop-bucket
+scoop install keypress
+```
+
 ## 動作要件
 
 ### 実行

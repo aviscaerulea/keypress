@@ -1,1 +1,6 @@
 out/
+**/.env
+**/*.local.*
+.task/
+.serena/
+.clasp.json
